@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bagaga Bypass</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;background:#080b16;color:white;
+font-family:Arial;min-height:100vh;
+display:flex;align-items:center;justify-content:center;
+}
+.card{
+width:90%;max-width:420px;padding:30px;
+background:#141b2d;border:1px solid #29385d;
+border-radius:20px;text-align:center;
+box-shadow:0 0 35px #386aff30;
+}
+h1{color:#6592ff;font-size:30px}
+p{color:#9ba9c8}
+input,button{
+width:100%;padding:15px;margin-top:15px;
+border-radius:10px;font-size:15px;
+}
+input{background:#080e1e;color:white;border:1px solid #34466c}
+button{background:#4778ff;color:white;border:0;font-weight:bold}
+#result{margin-top:20px;color:#8eb0ff}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>BAGAGA BYPASS</h1>
+<p>DELTA KEY SYSTEM</p>
+<input id="link" placeholder="Paste your LootLabs link">
+<button onclick="getKey()">GET KEY</button>
+<div id="result"></div>
+</div>
+<script>
+function getKey(){
+const link=document.getElementById('link').value.trim();
+const result=document.getElementById('result');
+if(!link){
+result.textContent='Please enter a link!';
+return;
+}
+if(!/^https:\/\/links\.lootlabs\.gg\//i.test(link)){
+result.textContent='Invalid LootLabs link!';
+return;
+}
+result.textContent='Link received. Official verification is not connected yet.';
+}
+</script>
+</body>
+</html>
