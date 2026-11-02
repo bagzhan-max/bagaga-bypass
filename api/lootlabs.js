@@ -1,18 +1,17 @@
-
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
+  if (req.method !== "GET") {
     return res.status(405).json({
       success: false,
-      message: "Method not allowed"
+      message: "GET only"
     });
   }
 
-  const { user_id, status } = req.body || {};
+  const { click_id, ip, unique_id } = req.query || {};
 
-  if (!user_id || status !== "completed") {
+  if (!click_id || !ip || !unique_id) {
     return res.status(400).json({
       success: false,
-      message: "Task not verified"
+      message: "Missing parameters"
     });
   }
 
